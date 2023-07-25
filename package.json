@@ -23,8 +23,9 @@
   "dependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
     "bulma": "^0.9.4",
-    "vue": "^3.2.36",
-    "vue-loader": "^17.0.1"
+    "vue": "^3.3.4",
+    "vue-loader": "^17.0.1",
+    "vue-router": "^4.2.4"
   },
   "keywords": []
 }
