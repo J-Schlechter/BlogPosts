@@ -3,7 +3,9 @@
   "scripts": {
     "dev": "npm run --max_old_space_size=8192 development",
     "development": "mix",
-    "watch": "mix watch"
+    "watch": "mix watch",
+    "hot": "mix watch --hot",
+    "production": "mix --production"
   },
   "devDependencies": {
     "axios": "^1.4.0",
@@ -22,6 +24,8 @@
   "license": "ISC",
   "dependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
+    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/runtime-core": "^3.3.4",
     "bulma": "^0.9.4",
     "vue": "^3.3.4",
     "vue-loader": "^17.0.1",

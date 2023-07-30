@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
@@ -20,9 +21,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::middleware('auth')->post('/newPost', [PostController::class, 'createPost']);
+
 Route::get('/home', function () {
-    $posts = Post::get();
-    return view('home2', ['posts' => $posts]);
+    
+    return view('home');
 });
 
-Route::post('newPost', 'PostController@createPost');
+
+
+// Route for handling user registration
+Route::post('/register', [UserController::class, 'register']);
+Route::post('/login', [UserController::class, 'login']);
+//Route::post('/home/verify-token', [HomeController::class, 'verifyToken'])->middleware('auth');
+Route::middleware('auth')->get('/user-data', [UserController::class, 'getUserData']);
+Route::get('/posts', [PostController::class, 'getPosts']);
