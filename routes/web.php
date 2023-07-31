@@ -38,3 +38,4 @@ Route::middleware('auth')->get('/user-data', [UserController::class, 'getUserDat
 Route::get('/posts', [PostController::class, 'getPosts']);
 Route::get('/viewComments/{post_id}', [CommentController::class, 'viewComments']);
 Route::post('/addComment/{postId}', [CommentController::class, 'createComment']);
+Route::post('/logout', [UserController::class, 'logout']);
