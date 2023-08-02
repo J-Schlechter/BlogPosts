@@ -39,3 +39,5 @@ Route::get('/posts', [PostController::class, 'getPosts']);
 Route::get('/viewComments/{post_id}', [CommentController::class, 'viewComments']);
 Route::post('/addComment/{postId}', [CommentController::class, 'createComment']);
 Route::post('/logout', [UserController::class, 'logout']);
+Route::delete('/delete-post/{post}', [PostController::class, 'deletePost']);
+
